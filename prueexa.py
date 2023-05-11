@@ -1,3 +1,4 @@
+#ALGORITMO EXAMEN
 cd = int(input("Ingrese la cantidad de números: "))
 c = 1
 cp = 0
