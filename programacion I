@@ -1,1 +1,30 @@
-
+Algoritmo area_nayor_figuras
+	definir lc,ac,tb,th,ar,rh,rb Como Entero
+	definir at Como Real
+	escribir "escribir un lado del cuadrado"
+	leer lc
+	escribir "escribir la altura del triangulo"
+	leer th
+	escribir "escribir la base del triangulo"
+	leer tb
+	escribir "escribir la altura del rectangulo"
+	leer rh
+	escribir "escribir la base del rectangulo"
+	leer rb
+	ac=lc*lc
+	at=tb*th/2
+	ar=rh*rb
+    si ac>at Entonces
+		si ac>ar Entonces
+			escribir "la area mayor es la del cuadrado"
+		sino 
+			escribir"la area mayor es la del rectangulo"
+		FinSi
+	SiNo
+		si at>ar entonces
+			escribir"el area mayor es la del triangulo"
+		sino 
+			escribir"el area mayor es la del rectangulo"
+		finSi
+	FinSi
+FinAlgoritmo
