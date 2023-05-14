@@ -479,3 +479,41 @@ if cp>0:
     print("el promedio de numeros pares es : ",pp)
 else:
     print("no hay numeros pares en los numeros ingresados")
+
+
+
+#CUMPLE PARA 3 VALORES
+cn=int(input("ingrese la cantidad de numeros : "))
+nv=1
+sf=0
+while nv<=cn:
+    cf=1
+    if cf<=2:
+        sf=sf+num
+    cf+=cf+1
+    nv=nv+1
+numf=int(input("ingrese el numero : "))
+if sf==numf:
+    print("cumple con la sucesion fibonnacci")
+else:
+    print("no cumple con la sucesion fibonnacci")
+
+
+
+
+
+#CON LOS ULTIMOS 3 NUMEROS
+cn=int(input("ingrese la cantidad de numeros : "))
+nv=1
+sf=0
+while nv<=cn-3:
+    num=int(input("ingrese el numero : "))
+    nv=nv+1
+nums1=int(input("ingrese el numero : ") )
+nums2=int(input("ingrese el numero : ") )
+numsf=int(input("ingrese el numero : ") )
+s=nums1+nums2
+if s==numsf:
+    print("los ultimos tres numeros son consecutivos ya que la suma de el antepenultimo y penultimo da como resultado el ultimo numero ")
+else:
+    print("los ultimos tres numeros no son consecutivos")
