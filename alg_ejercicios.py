@@ -517,3 +517,166 @@ if s==numsf:
     print("los ultimos tres numeros son consecutivos ya que la suma de el antepenultimo y penultimo da como resultado el ultimo numero ")
 else:
     print("los ultimos tres numeros no son consecutivos")
+
+
+
+
+
+#MAYOR Y MENOR PRIMOS Y SUMA DE PARES ENTRE ESOS
+nd=int(input("ingrese la cantidad de numeros : "))
+sp=0
+cd=1
+cp=1
+ce=0
+c=1
+lp=1
+while cd<=nd:
+    num=int(input("ingrese el numero : "))
+    while c<=num:
+        if num%c==0:
+            ce=ce+1
+        c=c+1
+    if ce==2:
+        if lp==1:
+            pma=num
+            pme=num
+        else:
+            if num>pma:
+                pma=num
+            else:
+                if num<pme:
+                    pme=num
+        lp=lp+1
+    ce=0
+    c=1
+    cd=cd+1
+cpm=pma
+np=pme
+while np<=cpm:
+    if np%2==0:
+        sp=sp+np
+    np=np+1
+print("n primo mayor : ",pma," n primo menor : ",pme, " suma de pares entre esos primos : ",sp)
+
+
+
+
+
+#PRIMO MAYOR MENOR Y RESTA 
+nd=int(input("ingrese la cantidad de numeros : "))
+sp=0
+cd=1
+cp=1
+ce=0
+c=1
+lp=1
+while cd<=nd:
+    num=int(input("ingrese el numero : "))
+    while c<=num:
+        if num%c==0:
+            ce=ce+1
+        c=c+1
+    if ce==2:
+        if lp==1:
+            pma=num
+            pme=num
+        else:
+            if num>pma:
+                pma=num
+            else:
+                if num<pme:
+                    pme=num
+        lp=lp+1
+    ce=0
+    c=1
+    cd=cd+1
+print("primo mayo",pma,"primo menor",pme)
+cr=1
+cer=0
+r=pma-pme
+while cr<=r:
+    if r%cr==0:
+        cer=cer+1
+    cr=cr+1
+if cer==2:
+    print("la resta de los numeros primos mayor y menor da como resultado un numero primo")
+else:
+    print("la resta de los numeros primos mayor y menor no da como resultado un numero primo")
+
+
+
+
+
+#TIPO EXAMEN SEGUNDO Y TERCER PRIMO MULTIPLICADO CON SUMAS
+nd=int(input("ingrese la cantidad de numeros : "))
+cn=1
+cp=0
+c=1
+ce=0
+r=0
+while cn<=nd:
+    num=int(input("ingrese el numero : "))
+    while c<=num:
+        if num%c==0:
+            ce=ce+1
+        c=c+1
+    if ce==2:
+        cp=cp+1
+
+        if cp==2:
+         sp=num
+        else:
+         if cp==3:
+          tp=num
+    cn=cn+1
+    c=1
+    ce=0
+cl=1
+while cl<=tp:
+    r=r+sp
+    cl=cl+1
+print("el segundo primo es",sp,"y el tercer primo es ",tp," y la multiplicacion de esos dos es",r)
+
+
+
+
+#TIPO EXAMEN PRIMOS MAYOR, MENOR SUMA FACTORIALES PRIMOS
+cd=int(input("ingrese la cantidad de datos : "))
+nv=1
+cw=1
+ce=0
+lp=1
+r=1
+sp=0
+while nv<=cd:
+    num=int(input("ingrese el numero : "))
+    while cw<=num:
+        if num%cw==0:
+            ce=ce+1
+        cw=cw+1
+    if ce==2:
+        if lp==1:
+            pma=num
+            pme=num
+        else:
+            if num>pma:
+                pma=num
+            else:
+                if num<pme:
+                    pme=num
+        lp=lp+1
+    cw=1
+    ce=0
+    nv=nv+1
+clm=pma
+li=pme
+while li<=clm:
+    if li%2==0:
+        pp=li
+        while pp>0:
+            r=r*pp
+            pp=pp-1
+        sp=sp+r
+    li=li+1
+    r=1
+print("primo mayor : ",pma," primo menor : ",pme," y la suma de factoriales pares entre estos numeros es : ",sp)
