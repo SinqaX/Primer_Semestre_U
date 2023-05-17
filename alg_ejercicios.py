@@ -680,3 +680,119 @@ while li<=clm:
     li=li+1
     r=1
 print("primo mayor : ",pma," primo menor : ",pme," y la suma de factoriales pares entre estos numeros es : ",sp)
+
+
+
+
+
+#SERIE FIBONNACCI
+cf=int(input("ingrese la cantidad final : "))
+a=0
+b=1
+t=0
+print(a)
+print(b)
+while t<=cf:
+    t=a+b
+    if t<=cf:
+     print(t)
+     a=b
+     b=t
+
+    
+    
+    
+    
+    #SERIE FIBONNACCI HASTA LOS QUE QUIERE
+cf=int(input("ingrese la cantidad de fibonnacci que quiere : "))
+a=0
+b=1
+t=0
+cp=3
+print("1 =",a)
+print("2 =",b)
+while cp<=cf:
+    t=a+b
+    print( cp," =",t)
+    a=b
+    b=t
+    cp=cp+1
+    
+    
+    
+    
+    
+    #CALCULAR SI UN NUMERO ES FIBONNACCI
+c=int(input("ingrese el numero : "))
+a=0
+b=1
+t=0
+
+while t<c:
+    t=a+b
+    a=b
+    b=t
+if t==c:
+    print("si es fibonnacci")    
+else:
+    print("no es fibonnacci")
+    
+    
+    
+    
+    
+    #PROMEDIO FIBONNACCI
+c=int(input("ingrese la cantidad dada de numeros : "))
+cn=1
+a=0
+b=1
+t=0
+sf=0
+cf=0
+while cn<=c:
+    num=int(input("ingrese el numero"))
+    while t<num:
+        t=a+b
+        a=b
+        b=t
+    if t==num:
+        sf=sf+num
+        cf=cf+1
+    cn=cn+1
+pf=sf/cf
+print(sf)
+print(cf)
+print("promedio d enumeros fibonnacci : ",pf)
+
+
+
+
+
+#FIBONNACCI MAYOR Y MENOR
+c=int(input("ingrese la cantidad de numeros : "))
+nv=1
+a=0
+b=1
+t=0
+lf=1
+
+while nv<=c:
+    num=int(input("ingrese el numero : "))
+    while t<num:
+        t=a+b
+        a=b
+        b=t
+    if t==num:
+        if lf==1:
+            fma=num
+            fme=num
+        else:
+            if num>fma:
+                fma=num
+            else:
+                if num<fme:
+                    fme=num
+        lf=lf+1
+    nv=nv+1
+print("fibonnacci mayor : ", fma ," fibonnacci menor : ",fme)
+     
