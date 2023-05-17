@@ -744,13 +744,13 @@ else:
     #PROMEDIO FIBONNACCI
 c=int(input("ingrese la cantidad dada de numeros : "))
 cn=1
-a=0
-b=1
-t=0
 sf=0
 cf=0
 while cn<=c:
     num=int(input("ingrese el numero"))
+    a=0
+    b=1
+    t=0
     while t<num:
         t=a+b
         a=b
@@ -759,6 +759,7 @@ while cn<=c:
         sf=sf+num
         cf=cf+1
     cn=cn+1
+    
 pf=sf/cf
 print(sf)
 print(cf)
