@@ -772,13 +772,13 @@ print("promedio d enumeros fibonnacci : ",pf)
 #FIBONNACCI MAYOR Y MENOR
 c=int(input("ingrese la cantidad de numeros : "))
 nv=1
-a=0
-b=1
-t=0
 lf=1
 
 while nv<=c:
     num=int(input("ingrese el numero : "))
+    a=0
+    b=1
+    t=0
     while t<num:
         t=a+b
         a=b
