@@ -858,3 +858,38 @@ else:
         li=li+1
 pfp=sp/cp
 print("fibonnacci mayor : ",fma," primo menor : ",pme," promedio de pares entre estos dos numeros es : ",pfp)
+
+#2 Y 3 FIBONNACCI SUMA PRIMO
+cd=int(input("ingrese la cantidad de numeros a digitar : "))
+nv=1
+cf=0
+sf=0
+c=1
+ce=0
+while nv<=cd:
+    num=int(input("ingrese el numero : "))
+    a=0
+    b=1
+    t=0
+    while t<num:
+        t=a+b
+        a=b
+        b=t
+    if t==num:
+        cf=cf+1
+        if cf==2:
+         sf=sf+num
+         print(sf)
+        if cf==3:
+         sf=sf+num
+         print(sf)
+    nv=nv+1
+while c<=sf:
+    if sf%c==0:
+        ce=ce+1
+    c=c+1
+if ce==2:
+    print("la suma del segundo y tercer fibonnacci es un numero primo")
+else:
+    print("la suma del segundo y tercer fibonnacci no es un numero primo")
+    
