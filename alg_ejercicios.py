@@ -893,3 +893,88 @@ if ce==2:
 else:
     print("la suma del segundo y tercer fibonnacci no es un numero primo")
     
+
+
+
+
+#EXAMEN ANDHANCK
+cd=int(input("ingrese el la cantidad de datos : "))
+nv=1
+sf=0
+while nv<=cd:
+    num=int(input("ingrese el numero : "))
+    a=0
+    b=1
+    t=0
+    while t<num:
+        t=a+b
+        a=b
+        b=t
+    nv=nv+1
+if t==num:
+        print("son consecutivos")
+else:
+    print("no son consecutivos")
+
+
+
+
+
+    #EJEMPLO EXAMEN MIO
+cd=int(input("ingrese la cantidad de datos : "))
+nv=1
+c=1
+ce=0
+cp=0
+ct=0
+r=0
+while nv<=cd:
+    num=int(input("ingrese el numero : "))
+    while c<=num:
+        if num%c==0:
+            ce=ce+1
+        c=c+1
+    if ce==2:
+        cp=cp+1
+    if num%3==0:
+        ct=ct+1
+    c=1
+    ce=0
+    nv=nv+1
+print("la cantidad de primos es : ",cp," y la cantidad de multiplos de 3 es : ",ct," y los numeros fibonnacci que se encuentran entre estos dos contadores es :")
+if cp<ct:
+    while cp<ct:
+        a=0
+        b=1
+        t=0
+        while t<cp:
+            t=a+b
+            a=b
+            b=t
+        if t==cp:
+            ls=1
+            print("TABLA DEL ",cp)
+            while ls<11:
+                r=cp*ls
+                print(cp," * ",ls," = ",r)
+                ls=ls+1
+        cp=cp+1
+        r=0
+else:
+    while ct<cp:
+        a=0
+        b=1
+        t=0
+        while t<ct:
+            t=a+b
+            a=b
+            b=t
+        if t==ct:
+            ls=1
+            print("TABLA DEL ",cp)
+            while ls<11:
+                r=ct*ls
+                print(ct," * ",ls," = ",r)
+                ls=ls+1
+        ct=ct+1
+        r=0
