@@ -1121,3 +1121,42 @@ else:
     print("el promedio de la suma de factoriales fibbonacci : ",pf," es mayor que la suma de factoriales primos : ",pp)
 
 
+
+
+
+
+#ROMPIMIENTO DE CONTROL
+cc=int(input("ingrese el valor : "))
+while cc>0:
+    cau=cc
+    g=0
+    while cau==cc:
+        g=g+1
+        cc=cc=int(input("ingrese el valor : "))
+    print("grupo del ",cau," : cantidad = ",g)
+
+
+
+
+
+#DECISION DEL USUARIO
+resp=input("desea procesar triangulos ? (s/n) : ")
+while resp=='s'or resp=='S':
+    a=int(input("ingrese el valor a : "))
+    b=int(input("ingrese el valor b : "))
+    c=int(input("ingrese el valor c : "))
+    if a>0 and b>0 and c>0:
+        if a==b:
+            if b==c:
+                print("triangulo equilatero")
+            else:
+                print("triangulo isoceles")
+        else:
+            if a==c:
+                print("triangulo isoceles")
+            else:
+                if b==c:
+                    print("triangulo isoceles")
+                else:
+                    print("triangulo escaleno")
+    resp=input("desea procesar triangulos ? (s/n) : ")
