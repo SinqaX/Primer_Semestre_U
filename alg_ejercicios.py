@@ -1119,5 +1119,30 @@ if pp>pf:
     print("el promedio de la suma de factoriales primos : ",pp," es mayor que la suma de factoriales fibbonnacci : ",pf)
 else:
     print("el promedio de la suma de factoriales fibbonacci : ",pf," es mayor que la suma de factoriales primos : ",pp)
+    
+
+    
+v =[]
+s=0
+cc=0
+t=int(input("ingrese la cantidad de datos del vector : "))
+for i in range(t):
+    val=int(input("ingrese el valor : "))
+    v.append(val)
+for i in range(t):
+    r=2
+    c=0
+    while r<v[i]-1 and c==0:
+        if v[i]%2==0:
+            c=1
+        r=r+1
+    if c==0:
+        s=s+v[i]
+        cc=cc+1
+if cc>0:
+    p=s/cc
+    print("promedio primos : ",p)
+else:
+    print("no hay primos en el vector")
 
 
