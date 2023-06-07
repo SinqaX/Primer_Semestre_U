@@ -1144,5 +1144,32 @@ if cc>0:
     print("promedio primos : ",p)
 else:
     print("no hay primos en el vector")
+    
+    
+    
+
+v =[]
+s=0
+c=0
+t=int(input("ingrese la cantidad de datos del vector : "))
+for i in range(t):
+    val=int(input("ingrese el valor : "))
+    v.append(val)
+for i in range(t):
+    a=0
+    b=1
+    t=0
+    while t<v[i]:
+        t=a+b
+        a=b
+        b=t
+    if t==v[i]:
+        s=s+v[i]
+        c=c+1
+if c>0:
+    p=s/c
+    print("promedio fibonnacci : ",p)
+else:
+    print("no hay fibonnacci en el vector")
 
 
