@@ -1121,7 +1121,8 @@ else:
     print("el promedio de la suma de factoriales fibbonacci : ",pf," es mayor que la suma de factoriales primos : ",pp)
     
 
-    
+
+#PROMEDIO PRIMOS VECTOR    
 v =[]
 s=0
 cc=0
@@ -1148,6 +1149,7 @@ else:
     
     
 
+#PROMEDIO FIBONNACCI VECTOR
 v =[]
 s=0
 c=0
@@ -1212,3 +1214,57 @@ while resp=='s'or resp=='S':
                 else:
                     print("triangulo escaleno")
     resp=input("desea procesar triangulos ? (s/n) : ")
+
+
+
+
+
+#MAYOR MENOR DE UN VECTOR
+t=int(input("ingrese la cantidad de datos del vector : "))
+v=[]
+men=0
+may=0
+for i in range(t):
+    val=int(input("ingrese el dato"))
+    v.append(val)
+for i in range(t):
+    if i==1:
+        may=v[i]
+        men=v[i]
+    else:
+        if v[i]>may:
+            may=v[i]
+        else:
+            if v[i]<men:
+                men=v[i]
+print("dato mayor : ",may)
+print("dato menor : ",men)
+
+
+
+
+#FIBONNACCI MENOR VECTOR
+v=[]
+t=int(input("ingrese la cantidad de datos del vector : "))
+cp=0
+men=0
+c=0
+for i in range(t):
+    val=int(input("ingrese el valor : "))
+    v.append(val)
+for i in range(t):
+    a=0
+    b=1
+    t=0
+    while t<v[i]:
+        t=a+b
+        a=b
+        b=t
+    if t==v[i]:
+        if cp==0:
+            men=v[i]
+            cp=1
+        else:
+            if v[i]<men:
+                men=v[i]
+print("fibonnacci menor : ",men)
