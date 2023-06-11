@@ -1268,3 +1268,182 @@ for i in range(t):
             if v[i]<men:
                 men=v[i]
 print("fibonnacci menor : ",men)
+
+
+
+
+
+# MENOR VECTOR
+v=[]
+t=int(input("ingrese la cantidad de datos del vector : "))
+cp=0
+men=0
+for val in range(t):
+    val=int(input("ingrese el valor : "))
+    v.append(val)
+for val in range(t):
+    if cp==0:
+        men=v[val]
+        cp=1
+    else:
+        if v[val]<men:
+            men=v[val]
+v.remove(men)
+v.insert(0, men)
+
+print (v)
+
+
+
+
+
+#VALOR A ENCONTRAR EN EL VECTOR
+v=[]
+t=int(input("ingrese la cantidad de datos del vector : "))
+c=0
+s=0
+for i in range(t):
+    val=int(input("ingrese el valor : "))
+    v.append(val)
+k=int(input("ingrese el dato a encoontrar : "))
+for i in range(t):
+    if k==v[i]:
+        print("el dato ",k," se encuentra en la posición ", i)
+        s=1
+if s==0:
+    print("el dato a buscar no se eencuentra en el vector")            
+
+
+
+
+
+#PRIMEROS DOS PRIMOS CONSECUTIVOS
+v=[]
+t=int(input("ingrese la cantidad de datos del vector : "))
+cp=1
+pp=0
+sp=0
+z=0
+for i in range(t):
+    val=int(input("ingrese el dato : "))
+    v.append(val)
+for i in range(t):
+    r=2
+    c=0
+    while r<v[i]-1 and c==0:
+        if v[i] % r == 0:
+            c=1
+        r=r+1
+    if c==0 and cp<=2:
+        if cp==1:
+            pp=v[i]
+            cp=2
+        else:
+            if cp==2:
+                sp=v[i]
+                cp=3
+if pp<sp:
+    pp=pp+1
+    for pp in range(sp-1) :
+        r=2
+        c=0
+        while r<pp and c==0:
+            if pp%r==0:
+                c=c+1
+            r=r+1
+        if c==0:
+            z=z+1
+    if z==0:
+        print("los primeros dos primos son consecutivos")
+    else:
+        print("no son consecutivos los primeros dos primos")
+else:
+    sp=sp+1
+    for sp in range(pp-1) :
+        r=2
+        c=0
+        while r<sp and c==0:
+            if sp%r==0:
+                c=c+1
+            r=r+1
+        if c==0:
+            z=z+1
+    if z==0:
+        print("los primeros dos primos son consecutivos")
+    else:
+        print("no son consecutivos los primeros dos primos")
+
+
+
+
+
+#REMPLAZAR VECTOR CON LA MULTIPLICAICON DEL MAYOR Y EL MENOR
+v=[]
+t=int(input("ingrese la cantidad de datos del vector : "))
+c=0
+me=0
+ma=0
+r=1
+rr=0
+for i in range(t):
+    val=int(input("ingrese el valor : "))
+    v.append(val)
+for i in range(t):
+    if c==0:
+        ma=v[i]
+        me=v[i]
+        c=1
+    else:
+        if v[i]>ma:
+            ma=v[i]
+        else:
+            if v[i]<me:
+                me=v[i]
+while r<=me:
+    rr=rr+ma
+    r=r+1
+p1=v.index(me)
+p2=v.index(ma)
+for i in range(t):
+    if i>p1 and i<p2:
+        v[i]=rr
+print(v)
+
+
+
+
+
+#FIBONACCI MAYOR MENOR REMPLAZAR CON EL MENOR TOD EL VECTOR
+v=[]
+t=int(input("ingrese la cantidad de datos del vector : "))
+c=0
+for i in range(t):
+    val=int(input("ingrese el dato : "))
+    v.append(val)
+for i in range(t):
+    a=0
+    b=1
+    ta=0
+    while ta<v[i]:
+        ta=a+b
+        a=b
+        b=ta
+    if ta==v[i]:
+        if c==0:
+            ma=v[i]
+            me=v[i]
+            c=1
+        else:
+            if v[i]>ma:
+                ma=v[i]
+            else:
+                if v[i]<me:
+                    me=v[i]
+#con este ciclo quiero remplazar todos los valores de el vector por el valor de la variable me
+for i in range(t):
+   v[i]=me
+print("fibonnacci menor : ",me," fibonnacci mayor : ",ma)
+print(v)
+
+
+
