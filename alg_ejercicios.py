@@ -1447,3 +1447,94 @@ print(v)
 
 
 
+
+
+#ORDEN LISTA MENOR A MAYOR
+v=[]
+t=int(input("ingrese el numero de datos del vector : "))
+c=0
+me=0
+s=0
+for i in range(t):
+    val=int(input("ingresse el dato : "))
+    v.append(val)
+print (v)
+for i in range(t):
+    if c==0:
+        me=v[i]
+        c=1
+    else:
+        if me>v[i]:
+            me=v[i]
+            v.pop(i)
+            v.insert(0, me)
+print(v)
+
+
+
+
+
+#ORDEN LISTA MENOR A MAYOR
+v=[]
+t=int(input("ingrese el numero de datos del vector : "))
+c=0
+me=0
+s=0
+for i in range(t):
+    val=int(input("ingresse el dato : "))
+    v.append(val)
+print (v)
+v.sort()
+print(v)
+
+
+
+
+
+#CUANTAS VECES SE REPITE UN NUMERO EN EL VECTOR
+v=[]
+t=int(input("ingrese el numero de datos del vector : "))
+c=0
+for i in range(t):
+    val=int(input("ingresse el dato : "))
+    v.append(val)
+s=int(input("ingrese el numero que quiere buscar cauntas veces se repite en el vector : "))
+for i in range(t):
+    if s==v[i]:
+        c=c+1
+if c>0:
+    print("el numero ",s," se repite ",c," veces en el vector")
+else:
+    print("el numero ingresado no se encuentra en el vector")
+
+
+
+
+
+#CUANTAS VECES SE REPITE LOS DATOS  EN EL VECTOR
+v=[]
+t=int(input("ingrese el numero de datos del vector : "))
+for i in range(t):
+    val=int(input("ingresse el dato : "))
+    v.append(val)
+for i in range(t):
+    c=v[i]
+    co=0
+    for i in range(t):
+        if c==v[i]:
+            co=co+1
+        print("el numero ",c," se repite ",co," veces")
+
+
+
+
+
+#CUANTAS VECES SE REPITE LOS DATOS  EN EL VECTOR
+v=[]
+t=int(input("ingrese el numero de datos del vector : "))
+for i in range(t):
+    val=int(input("ingresse el dato : "))
+    v.append(val)
+for z in set(v):
+    c=v.count(z)
+    print("el numero ",z," se repite ",c," veces")
