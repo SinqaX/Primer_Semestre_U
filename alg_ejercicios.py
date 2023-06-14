@@ -1538,3 +1538,88 @@ for i in range(t):
 for z in set(v):
     c=v.count(z)
     print("el numero ",z," se repite ",c," veces")
+
+
+
+
+
+#VECTOR CON NUMEROS SIN REPETIR
+v=[]
+v2=[]
+t=int(input("ingrese la cantidad de datos del vector : "))
+for val in range(t):
+    val=int(input("ingrese el dato"))
+    v.append(val)
+v2=[set(v)]
+print(v)
+print(v2)
+
+
+
+
+
+#VECTOR CON NUMEROS SIN REPETIR
+v=[]
+v2=[]
+t=int(input("ingrese la cantidad de datos del vector : "))
+for val in range(t):
+    val=int(input("ingrese el dato"))
+    v.append(val)
+for val in v:
+    if val not in v2:
+        v2.append(val)
+print(v)
+print(v2)
+
+
+
+
+
+#NUMERO DE VECES QUE SE REPITE CADA NUMERO EN EL VECTOR
+v=[]
+c=[]
+t=int(input("ingrese la cantidad de datos del vector : "))
+for val in range(t):
+    val=int(input("ingrese el dato"))
+    v.append(val)
+for val in v:
+    z=v[val]
+    co=0
+    for i in range(t):
+        if z==v[i]:
+           co=co+1
+    if val not in c:
+        c.append(val)
+        print("el ",val," se repite ",co," veces")
+
+
+
+
+
+#NUMERO DE VECES QUE SE REPITE CADA NUMERO EN EL VECTOR Y EL QUE MAS SE REPITE
+v=[]
+c=[]
+t=int(input("ingrese la cantidad de datos del vector : "))
+a=0
+ma=0
+zi=0
+for val in range(t):
+    val=int(input("ingrese el dato"))
+    v.append(val)
+for val in v:
+    z=v[val]
+    co=0
+    for i in range(t):
+        if z==v[i]:
+           co=co+1
+    if a==0:
+        ma=co
+        a=1
+    else:
+        if co>ma:
+            ma=co
+            zi=v[val]
+    if val not in c:
+        c.append(val)
+        print("el ",val," se repite ",co," veces")
+print("el dato que mas se repite es el ",zi," con ",ma," veces")
