@@ -1449,26 +1449,7 @@ print(v)
 
 
 
-#ORDEN LISTA MENOR A MAYOR
-v=[]
-t=int(input("ingrese el numero de datos del vector : "))
-c=0
-me=0
-s=0
-for i in range(t):
-    val=int(input("ingresse el dato : "))
-    v.append(val)
-print (v)
-for i in range(t):
-    if c==0:
-        me=v[i]
-        c=1
-    else:
-        if me>v[i]:
-            me=v[i]
-            v.pop(i)
-            v.insert(0, me)
-print(v)
+
 
 
 
@@ -1511,33 +1492,12 @@ else:
 
 
 
-#CUANTAS VECES SE REPITE LOS DATOS  EN EL VECTOR
-v=[]
-t=int(input("ingrese el numero de datos del vector : "))
-for i in range(t):
-    val=int(input("ingresse el dato : "))
-    v.append(val)
-for i in range(t):
-    c=v[i]
-    co=0
-    for i in range(t):
-        if c==v[i]:
-            co=co+1
-        print("el numero ",c," se repite ",co," veces")
 
 
 
 
 
-#CUANTAS VECES SE REPITE LOS DATOS  EN EL VECTOR
-v=[]
-t=int(input("ingrese el numero de datos del vector : "))
-for i in range(t):
-    val=int(input("ingresse el dato : "))
-    v.append(val)
-for z in set(v):
-    c=v.count(z)
-    print("el numero ",z," se repite ",c," veces")
+
 
 
 
@@ -1575,51 +1535,166 @@ print(v2)
 
 
 
-#NUMERO DE VECES QUE SE REPITE CADA NUMERO EN EL VECTOR
+#INTERCAMBIAR DATO MENOR CON DATO EN LA PRIMERA POSICIONM
 v=[]
-c=[]
-t=int(input("ingrese la cantidad de datos del vector : "))
-for val in range(t):
-    val=int(input("ingrese el dato"))
+t=int(input("ingrese el numero de datos del vector : "))
+
+for i in range(t):
+    val=int(input("ingresse el dato : "))
     v.append(val)
-for val in v:
-    z=v[val]
-    co=0
-    for i in range(t):
-        if z==v[i]:
-           co=co+1
-    if val not in c:
-        c.append(val)
-        print("el ",val," se repite ",co," veces")
+print(v)
+
+for i in range(t):
+    me=i#asiganamos la posicion i al menor 
+    for j in range(i+1,t):#trabajamos con i+1 para no utilizar el valor ordenano
+        if v[j]<v[me]:#comparamos el valor de v[j] con el valor que tiene la posicion me 
+            me=j #asignamos la posicion j en la variable me
+    aux=v[i]#al aux le asignamos el valor de la posicion i
+    v[i]=v[me]#el valor minimo v[me] se coloca en la posicion de i
+    v[me]=aux#el auxiliar se coloca en la posicion de el valor minimo osea el me
+print(v)
 
 
 
 
 
-#NUMERO DE VECES QUE SE REPITE CADA NUMERO EN EL VECTOR Y EL QUE MAS SE REPITE
+#AGREGAR UN DATO EN EL VECTOR EN ORDEN
 v=[]
-c=[]
-t=int(input("ingrese la cantidad de datos del vector : "))
-a=0
-ma=0
-zi=0
-for val in range(t):
-    val=int(input("ingrese el dato"))
+t=int(input("ingrese el numero de datos del vector : "))
+c=0
+
+for i in range(t):
+    val=int(input("ingresse el dato : "))
     v.append(val)
-for val in v:
-    z=v[val]
-    co=0
-    for i in range(t):
-        if z==v[i]:
-           co=co+1
-    if a==0:
-        ma=co
-        a=1
+print(v)
+
+dato=int(input("ingrese el dato a insertar : "))
+i=0
+while i<t and c==0:
+
+    if dato>v[i]:
+        i =i+1
     else:
-        if co>ma:
-            ma=co
-            zi=v[val]
-    if val not in c:
-        c.append(val)
-        print("el ",val," se repite ",co," veces")
-print("el dato que mas se repite es el ",zi," con ",ma," veces")
+        c=1
+        pos=i
+j=t-1
+v.append(0)
+while j >=pos:
+    v[j+1]=v[j]
+    j=j-1
+v[pos]=dato
+print(v)
+
+
+
+
+
+#ELIMINAR DATO EN EL VECTOR Y RECORRER EL VECTOR
+v=[]
+t=int(input("ingrese la cantidad de datos del vector : "))
+c=0
+for i in range(t):
+    val=int(input("ingrese el dato :"))
+    v.append(val)
+print(v)
+dato=int(input("ingrese el dato a eliminar del vector : "))
+j=0
+while j<=t and c==0:
+    if dato==v[j]:
+        c=1
+        pos=j
+    else:
+        j+=1
+if c==1:
+    v.remove(dato)
+    print(v)
+else:
+    print("el dato no se encontro en el en el vector")
+
+
+
+
+
+#BUSCAR DATO EN EL VECTOR CON BUSQUEDA BINARIA
+v=[10,20,30,40,55,75,85,90,100,120,130,140]
+t=len(v)
+c=0
+dato=int(input("ingresar el dato a buscar : "))
+limin=0
+limsu=t-1
+while limin<=limsu and c==0:
+    me=int((limin+limsu)/2)
+    if dato==v[me]:
+        c=1
+    else:
+        if dato >v[me]:
+            limin=me+1
+        else:
+            if dato<v[me]:
+                limsu=me-1
+if c==1:
+    print("el ",dato," se encuentra en la posicion : ",me)
+else:
+    print("el dato ",dato," no se encuentra en el vector")
+
+
+
+
+
+#DATOS DEL PRIMER VECTOR DETERMINAN EL RANGO PARA DATOS DEL SEGUNDO VECTOR
+r=[3,5,4]
+dato=[4,7,2,9,6,5,7,8,14,2,9,6]
+v1=[]
+v2=[]
+j=0
+i=0
+for i in r:
+    c=0
+    limin=j
+    limsu=i + j
+    for j in range(limin,limsu):
+        if c==0:
+            me=dato[j]
+            ma=dato[j]
+            c=1
+        else:
+            if dato[j]<me:
+                me=dato[j]
+            else:
+                if dato[j]>ma:
+                    ma=dato[j]
+    v1.insert(i,me)
+    v2.insert(i,ma)
+    j=limsu
+print("los datos menores de cada intervalo del vector con respecto a los datos de el vector rango son : ",v1)
+print("los datos mayores de cada intervalo del vector con respecto a los datos de el vector rango son : ",v2)
+
+
+
+
+
+#DETERMINAR RANGOS CON VECTOR FIBONNACCI PARA VECTOR DATOS Y SACAR PROMEDIO DE CADA INTERVALO
+vf=[]
+v=[]
+tf=int(input("ingrese la cantidad de datos para el vector de los fibonnacci : "))
+for f in range(tf):
+    fi=int(input("ingrese los fibonnacci:"))
+    vf.append(fi)
+t=int(input("ingrese la cantidad de datos para el vector de los datos : "))
+for i in range(t):
+    val=int(input("ingrese el dato :"))
+    v.append(val)
+j=0
+z=1
+for fi in vf:
+    r=0
+    c=0
+    limin=j
+    limsu=fi+j
+    for val in range(limin,limsu):
+        r+=+v[val]
+        c+=1
+    p=r/c
+    print("el promedio del rango ",z," sobre el vector de datos es ",p)
+    z+=1
+    j=limsu
