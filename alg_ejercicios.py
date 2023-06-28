@@ -1698,3 +1698,454 @@ for fi in vf:
     print("el promedio del rango ",z," sobre el vector de datos es ",p)
     z+=1
     j=limsu
+
+
+
+
+
+#matriz filas pares impares
+matriz=[]
+filas=int(input("ingrese la cantidad de filas :"))
+columnas=int(input("ingrese la cantidad de columnas :"))
+for i in range(filas):
+    fila=[]
+    for j in range(columnas):
+        if i%2==0:
+            valor=1
+        else:
+            valor=0
+        fila.append(valor)
+    matriz.append(fila)
+for fila in matriz:
+    print(fila)
+
+
+
+
+
+#columnas pares impares
+m=[]
+fm=int(input("ingrese la cantidad de filas :"))
+cm=int(input("ingrese la cantidad de columnas :"))
+for i in range(fm):
+    fm=[]
+    for j in range(cm):
+        if j%2==0:
+            val=1
+        else:
+            val=0
+        fm.append(val)
+    m.append(fm)
+for fm in m:
+    print(fm)
+
+
+
+
+
+#diagonal principal secundaria con 1 resto con 0
+m=[]
+fm=int(input("ingrese la cantidad de filas :"))
+cm=int(input("ingrese la cantidad de columnas :"))
+for i in range(fm):
+    fila=[]
+    for j in range(cm):
+        if j==i or j+i==fm-1:
+            val=1
+        else:
+            val=0
+        fila.append(val)
+    m.append(fila)
+for fila in m:
+    print(fila)
+
+
+
+
+
+#promedio pares en matriz
+m=[]
+fm=int(input("ingrese la cantidad de filas :"))
+cm=int(input("ingrese la cantidad de columnas :"))
+s=0
+c=0
+for i in range(fm):
+    fl=[]
+    for j in range(cm):
+        val=int(input("ingrese el dato de la matriz : "))
+        fl.append(val)
+    m.append(fl)
+for fl in m:
+    for j in range(cm):
+        if fl[j]%2==0:
+            s+=fl[j]
+            c+=1
+if c>0:
+    p=s/c  
+for fl in m:
+    print(fl)
+print("el promedio de los numeros pares de la matriz es :",p)
+
+
+
+
+
+#formar vector con primos iguales en matrices
+a=[]
+fa=int(input("ingrese la cantidad de filas de la matriz a : "))
+ca=int(input("ingrese la cantidad de columnas de la matriz a : "))
+b=[]
+fb=int(input("ingrese la cantidad de filas de la matriz b : "))
+cb=int(input("ingrese la cantidad de columnas de la matriz b : "))
+c=[]
+l=0
+primo=0
+for i in range(fa):
+    fa=[]
+    for j in range(ca):
+        val=int(input("ingrese el dato de la  matriz a: "))
+        fa.append(val)
+    a.append(fa)
+for fa in a:
+    print(fa)
+for x in range(fb):
+    fb=[]
+    for y in range(cb):
+        val=int(input("ingrese el dato de la  matriz b: "))
+        fb.append(val)
+    b.append(fb)
+for fb in b:
+    print(fb)
+for fa in a:
+    s=False
+    for i in range(ca):
+        r=2
+        z=0
+        while r<fa[i] and z<=1:
+            if fa[i]%2==0:
+                z+=1
+        if z==1:
+            primo=fa[i]
+            s=True
+            break
+for fb in b:
+    for x in range(cb):
+        if fb[x]%2==0:
+            if fb[x]==primo:
+                e=0
+                k=0
+                for k in c:
+                    if l==0:
+                        c.append(primo)
+                        l=1
+                    else:
+                        if c[k]==primo:
+                            e=1
+                    if e==0:
+                        c.append(primo)
+print(c)
+
+
+
+
+
+#promedio fibonnacci en matriz
+m=[]
+fm=int(input("ingrese la cantidad de filas :"))
+cm=int(input("ingrese la cantidad de columnas :"))
+s=0
+c=0
+for i in range(fm):
+    fl=[]
+    for j in range(cm):
+        val=int(input("ingrese el dato de la matriz : "))
+        fl.append(val)
+    m.append(fl)
+for fl in m:
+    for j in range(cm):
+        a=0
+        b=1
+        t=0
+        while t<fl[j]:
+            t=a+b
+            a=b
+            b=t
+        if t==fl[j]:
+            s+=fl[j]
+            c+=1
+if c>0:
+    p=s/c
+for fl in m:
+    print(fl)
+print("el promedio de los fibonnacci es : ",p )
+
+
+
+
+
+#promedio fibonnacci y pares  en matriz y compararlos
+m=[]
+fm=int(input("ingrese la cantidad de filas :"))
+cm=int(input("ingrese la cantidad de columnas :"))
+s=0
+c=0
+ss=0
+cc=0
+for i in range(fm):
+    fl=[]
+    for j in range(cm):
+        val=int(input("ingrese el dato de la matriz : "))
+        fl.append(val)
+    m.append(fl)
+for fl in m:
+    for j in range(cm):
+        a=0
+        b=1
+        t=0
+        while t<fl[j]:
+            t=a+b
+            a=b
+            b=t
+        if t==fl[j]:
+            s+=fl[j]
+            c+=1
+        if fl[j]%2==0:
+            ss+=fl[j]
+            cc+=1
+if c>0:
+    p=s/c
+if cc>0:
+    pp=ss/cc
+for fl in m:
+    print(fl)
+if p>pp:
+    print("el promedio de los fibonnacci:",p,"es mayor que el promedio de los numeros pares:",pp)
+else:
+    print("el promedio de los pares :",pp,"es mayor que el promedio de los numeros fibonnacci:",p)
+
+
+
+
+
+#promedio dato mayoy y menor y promedio de cada fila
+m=[]
+fm=int(input("ingrese la cantidad de filas :"))
+cm=int(input("ingrese la cantidad de columnas :"))
+s=0
+c=0
+z=True
+for i in range(fm):
+    fl=[]
+    for j in range(cm):
+        val=int(input("ingrese el dato de la matriz : "))
+        fl.append(val)
+    m.append(fl)
+for fl in m:
+    print(fl)
+for fl in m:
+    p=0
+    a=0
+    for j in range(cm):
+        a+=fl[j]
+        if z==True:
+            ma=fl[j]
+            me=fl[j]
+            z=False
+        else:
+            if fl[j]>ma:
+                ma=fl[j]
+            else:
+                if fl[j]<me:
+                    me=fl[j]
+    p=a/cm
+    print("el promedio de la fila : ",fl," = ",p)
+print("el dato mayoy de la matriz es : ",ma," y el dato menor de la matriz es : ",me)
+
+
+
+
+
+#pprimo mayor y menor de los primos de la matriz
+m=[]
+fm=int(input("ingrese la cantidad de filas :"))
+cm=int(input("ingrese la cantidad de columnas :"))
+s=0
+c=0
+z=True
+x=False
+for i in range(fm):
+    fl=[]
+    for j in range(cm):
+        val=int(input("ingrese el dato de la matriz : "))
+        fl.append(val)
+    m.append(fl)
+for fl in m:
+    print(fl)
+for fl in m:
+    for j in range(cm):
+        r=2
+        x=False
+        while r<fl[j] and x==False:
+            if fl[j]%r==0:
+                x=True
+            r+=1
+        if x==False:
+            if z==True:
+               ma=fl[j]
+               me=fl[j]
+               z=False
+            else:
+               if fl[j]>ma:
+                    ma=fl[j]
+               else:
+                   if fl[j]<me:
+                       me=fl[j]
+
+print("el primo mayor es : ",ma," y el primo menor es ",me,)
+        
+
+
+
+
+#segundo y tercer primo suma de los dos numero primo
+m=[]
+fm=int(input("ingrese la cantidad de filas :"))
+cm=int(input("ingrese la cantidad de columnas :"))
+s=0
+c=0
+z=0
+for i in range(fm):
+    fl=[]
+    for j in range(cm):
+        val=int(input("ingrese el dato de la matriz : "))
+        fl.append(val)
+    m.append(fl)
+for fl in m:
+    for j in range(cm):
+        a=0
+        b=1
+        t=0
+        while t<fl[j]:
+            t=a+b
+            a=b
+            b=t
+        if t==fl[j]:
+            z+=1
+            if z==2:
+                sf=fl[j]
+            else:
+                if z==4:
+                    cf=fl[j]
+print("segundo fibonnacci : ",sf)
+print("cuarto fibonnaci : ",cf)
+rf=sf+cf
+r=2
+b=False
+while r<rf and b==False:
+    if rf%r==0:
+        b=True
+if b==False:
+    print("la suma del segundo  y tercer fibonnacci es un numero primo")
+else:
+    print("la suma del segundo y cuarto fibonnacci no es un numero primo")
+
+
+
+
+
+#fibonnacci mayor y menor e intercambiarlos
+m=[]
+fm=int(input("ingrese la cantidad de filas :"))
+cm=int(input("ingrese la cantidad de columnas :"))
+z=True
+for i in range(fm):
+    fl=[]
+    for j in range(cm):
+        val=int(input("ingrese el dato de la matriz : "))
+        fl.append(val)
+    m.append(fl)
+for fl in m:
+    print(fl)
+for i in range(fm):
+    for k in range(cm):
+        a=0
+        b=1
+        t=0
+        while t<m[i][k]:
+            t=a+b
+            a=b
+            b=t
+        if t==m[i][k]:
+            if z==True:
+               ma=m[i][k]
+               fa=i
+               ca=k
+               me=m[i][k]
+               fe=i
+               ce=k
+               z=False
+            else:
+               if m[i][k]>ma:
+                    ma=m[i][k]
+                    fa=i
+                    ca=k
+               else:
+                   if m[i][k]<me:
+                       me=m[i][k]
+                       fe=i
+                       ce=k
+aux=m[fa][ca]
+m[fa][ca]=me
+m[fe][ce]=aux
+print("matriz resultante")
+for fl in m :
+    print(fl)
+
+
+
+
+
+#fibonnacci mayor y menor e intercambiar las filas
+m=[]
+fm=int(input("ingrese la cantidad de filas :"))
+cm=int(input("ingrese la cantidad de columnas :"))
+z=True
+for i in range(fm):
+    fl=[]
+    for j in range(cm):
+        val=int(input("ingrese el dato de la matriz : "))
+        fl.append(val)
+    m.append(fl)
+for fl in m:
+    print(fl)
+for i in range(fm):
+    for k in range(cm):
+        a=0
+        b=1
+        t=0
+        while t<m[i][k]:
+            t=a+b
+            a=b
+            b=t
+        if t==m[i][k]:
+            if z==True:
+               ma=m[i][k]
+               fa=i
+               me=m[i][k]
+               fe=i
+               z=False
+            else:
+               if m[i][k]>ma:
+                    ma=m[i][k]
+                    fa=i
+               else:
+                   if m[i][k]<me:
+                       me=m[i][k]
+                       fe=i
+                       
+aux=m[fa]
+m[fa]=m[fe]
+m[fe]=aux
+print("matriz resultante")
+for fl in m :
+    print(fl)
