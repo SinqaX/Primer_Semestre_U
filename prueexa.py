@@ -1,55 +1,41 @@
 #ALGORITMO EXAMEN
-cd = int(input("Ingrese la cantidad de números: "))
-c = 1
-cp = 0
-cn = 1
-ce = 0
-ctm = 0
-xt = 0
-ct = 0
+#se tienen dos vectores con datos numerico s, en el primer vector los pimos 2 y 3 determianan la cantidad de datos a 
+#recorrer en el segundo vector, hallar el proemedio de los paresque estan en estos dos rangos 
+pri=[1,3,2,4,7,2]
+pa=[1,2,3,4,6,7,8,9]
+c=0
+pri_2=0
+pri_3=0
+for i in range(len(pri)):
+    r=2
+    p= False
+    while r<pri[i]  and p==False:
+        if pri[i]%r==0:
+            p=True
+        r+=1
+    if p==False:
+        if c==2:
+            pri_2=pri[i]
+        else: 
+            if c==3:
+                pri_3=pri[i]
+        c+=1
+print(pri_2,pri_3)
 
-while cn <= cd:
-    num = int(input("Ingrese el número: "))
-    c = 1
-    ce = 0
-    
-    while c <= num:
-        if num % c == 0:
-            ce = ce + 1
-        c = c + 1
-
-    if ce == 2:
-        cp = cp + 1
-    
-    if num % 3 == 0:
-        ct = ct + 1
-     
-    cn = cn + 1
-
-print("La cantidad de números primos es", cp, "y la cantidad de múltiplos de 3 es", ct, "y las tablas de multiplicar de números pares entre estos dos números son:")
-if cp < ct:
-    ctm = cp
-    
-    while ctm <= ct:
-         if ctm % 2 == 0: 
-          print("TABLA DEL", ctm)
-          while xt < 11:
-            r = ctm * xt
-            print(ctm, "x", xt, "=", r)
-            xt = xt + 1
-            
-         ctm = ctm + 1
-         xt = 1
+if pri_2<pri_3:
+    lim_inf=pri_2
+    lim_sup=pri_3
 else:
-    ctm = ct
-    
-    while ctm <= cp:
-        if ctm % 2 == 0:
-         print("TABLA DEL", ctm)
-         while xt < 11:
-          r = ctm * xt
-          print(ctm, "x", xt, "=", r)
-          xt = xt + 1
-            
-         ctm = ctm + 1
-         xt = 1
+    lim_inf=pri_3
+    lim_sup=pri_2
+sump=0
+cp=0
+j=lim_inf
+for j in range(lim_sup):
+    if pa[j]%2==0:
+        sump+=pa[j]
+        cp+=1
+if cp>0:
+    prom=sump/cp
+print("el promedio de numeros pares entre los rangos ",lim_inf," y ",lim_sup," es : ",prom)
+
