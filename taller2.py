@@ -514,19 +514,21 @@ for i in range(t):
         pa.append(v[i])
     else:
         im.append(v[i])
+
 for i in range(len(pa)):
     me = i
     for j in range(i + 1, len(pa)):
         if pa[j] < pa[me]:
             me = j
     pa[i], pa[me] = pa[me], pa[i]
-
+print(pa)
 for i in range(len(im)):
     me = i
     for j in range(i + 1, len(im)):
         if im[j] > im[me]:
             me = j
     im[i], im[me] = im[me], im[i]
+    print(im)
 resultado = []
 i, j = 0, 0
 for k in range(t):
