@@ -2149,3 +2149,121 @@ m[fe]=aux
 print("matriz resultante")
 for fl in m :
     print(fl)
+
+
+
+#MAYOR MENOR PROMEDIO MATRIZ COIN FUNCIONES
+m=[]
+fm=int(input("ingrese la cantidad de filas de la matriz"))
+cm=int(input("ingrese la cantidad de columnas de la matriz"))
+for i in range(fm):
+    f=[]
+    for j in range(cm):
+        val=int(input("ingrese el dato :"))
+        f.append(val)
+    m.append(f)
+for f in m:
+    print("el mayor de la fila es ",max(f))
+    print("el menor de la fila es ",min(f))
+    prom=sum(f)/len(f)
+    print("y el promedio de la fila es ",prom)
+
+for f in m :
+    print(f)
+
+
+
+
+
+#MAYOT MENOR Y PROMEDIO DE CADA COLUMNA
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+fm=len(matriz)
+cm=len(matriz[0])
+
+for c in range(cm):
+    ma=matriz[0][c]
+    me=matriz[0][c]
+    su=0
+    z=False
+    for f in matriz:
+        aux=f[c]
+        su+=aux
+        if aux>ma:
+            ma=aux
+        if aux<me:
+            me=aux
+    prom=su/fm
+    print(f"columna {c+1}")
+    print(f"mayor : {ma}")
+    print(f"menor : {me}")
+    print(f"promedio: {prom}\n")
+
+
+
+
+###	Ordenar las filas pares ascendentemente y las filas impares descendentemente
+m=[
+    [1,3,2],
+    [8,7,9],
+    [5,4,6],
+    [5,1,9]
+]
+for f in m:    
+    print(f)    
+fm=len(m)
+cm=len(m[0])
+for f in range(fm) :
+        if f%2==0:
+            m[f].sort()
+        else:
+            m[f].sort(reverse=True)
+for f in m :
+     print(f)
+###	Ordenar las filas pares ascendentemente y las filas impares descendentemente
+m=[
+    [1,3,2],
+    [8,7,9],
+    [5,4,6],
+    [5,1,9]
+]
+for f in m:    
+    print(f)    
+fm=len(m)
+cm=len(m[0])
+for f in range(fm) :
+        if f%2==0:
+            for c in range(cm):
+                me=c
+                for j in range(c+1,cm):
+                    if m[f][j]<m[f][me]:
+                         me=j
+                m[f][c],m[f][me]=m[f][me],m[f][c]
+        else:
+             for c in range(cm):
+                ma=c
+                for j in range(c+1,cm):
+                    if m[f][j]>m[f][ma]:
+                         ma=j
+                m[f][c],m[f][ma]=m[f][ma],m[f][c]
+for f in m :
+     print(f)
+
+
+###FUNCION FIBBONACI
+def fibbonaci(valor):
+    a=0
+    b=1
+    t=0
+    while t<valor:
+        t=a+b
+        a=b
+        b=t
+    if t==valor:
+        return(True)
+    else:
+        return(False)
