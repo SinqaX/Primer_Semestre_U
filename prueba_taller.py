@@ -1,60 +1,51 @@
-def fibbonaci(valor):
-    a=0
-    b=1
-    t=0
-    while t<valor:
-        t=a+b
-        a=b
-        b=t
-    if t==valor:
-        return(True)
-    else:
-        return(False)
-    
-def CrearMatriz():
-    m=[]
-    fm=int(input("ingrese la cantidad de filas de la matriz"))
-    cm=int(input("ingrese la cantidad de columnas de la matriz"))
-    for i in range(fm):
-        f=[]
-        for j in range(cm):
-            val=int(input("ingrese el dato :"))
-            f.append(val)
-        m.append(f)
-    return m
-                        
-def primo(valor):
-    r=2
-    p=False
-    if valor<=1:
-        return False
-    else:
-        while r<valor-1 and p==False:
-            if valor%r==0:
-                p=True
-            r+=1
-        if p==False:
-            return True
-        else:
-            return False
+def punto4():
+    cd=int(input("ingrese la cantidad de datos "))
+    c=0
+    for i in range(cd):
+        num=int(input("ingrese el numero : "))
+        a=0
+        b=1
+        t=0
+        while t<num:
+            t=a+b
+            a=b
+            b=t
+        if t==num:
+            c+=1
+            if c==1:
+                f1=num
+            elif c==2:
+                f2=num
+            elif c==3:
+                f3=num
+    ma=f1
+    me=f1
+    if f2>ma:
+        ma=f2
+    elif f2<me:
+        me=f2
+    if f3>ma:
+        ma=f3
+    elif f3<me:
+        me=f3
+    sp=0
+    cp=0
+    p=0
+    mef=me
+    while me<ma:
+        if me%2==0:
+            sp+=me
+            cp+=1
+        me+=1
+    if cp>0:
+        p=sp/cp
+    return    print(f"el promedio de los numeros pares que estan entre el fibonacci menor {mef}, y el fibonacci mayor {ma}, es {p}")
 
-def listas(m):
-    lp=[]
-    lf=[]
-    for i in range(len(m)):
-        for j in range(len(m[0])):
-            if fibbonaci(m[i][j])==True:
-                lf.append(m[i][j])
-            if primo(m[i][j])==True:
-                lp.append(m[i][j])
-    return lp, lf
 
-m=CrearMatriz()
-lp,lf=listas(m)
-print("vector de fibbonaci :\n",lf)
-print("vector de primos : \n",lp)
-      
-
+while True:
+    dig=int(input("que punto quiere ejecutar ?"))
+    if dig==4:
+            punto4()
 
 
 
