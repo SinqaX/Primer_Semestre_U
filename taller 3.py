@@ -281,3 +281,14 @@ def punto_19(m):
             if dato > 0 and fibonacci(dato) and dato not in v:
                 v.append(dato)
     print(f"vector resultante : {v}")
+
+def Leer_matriz():
+    m=[]
+    fm=int(input("ingrese la cantidad de filas :"))
+    cm=int(input("ingrese la cantidad de columnas :"))
+    for i in range(fm):
+        fl=[]
+        for j in range(cm):
+            val=int(input("ingrese el dato de la matriz : "))
+            fl.append(val)
+        m.append(fl)
