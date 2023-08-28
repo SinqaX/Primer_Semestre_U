@@ -237,26 +237,23 @@ def punto_18_2(m1,m2):
     print(f"el vector resultante con los primos comunes de las matrices es : {v}")
 
 # -	Formar un vector con los primos no comunes de las dos matrices sin repetidos
-# def punto_18_3(m1,m2):
-#     print("-18.3) Formar un vector con los primos no comunes de las dos matrices sin repetidos\n")
-#     fm1=len(m1)
-#     cm1=len(m1[0])
-#     fm2=len(m2)
-#     cm2=len(m2[0])
-#     z=0
-#     v=[]
-#     for i in range(fm1):
-#         for j in range(cm1):
-#             valor=m[i][j]
-#             if primo(valor):
-#                 no_es_comun=True
-#                 for k in range(fm2):
-#                     for l in range(cm2):
-#                         if m2[k][l]==valor:
-#                             no_es_comun=False
-#                         if no_es_comun and valor not in v:
-#                             v.append(valor)
-#     print(f"el vector resultante con los primos no comunes de las matrices es : {v}")
+def punto_18_3(m1,m2):
+    print("-18.3) Formar un vector con los primos no comunes de las dos matrices sin repetidos\n")
+    fm1=len(m1)
+    cm1=len(m1[0])
+    fm2=len(m2)
+    cm2=len(m2[0])
+    v=[]
+    for i in range(fm1):
+        for j in range(cm1):
+            valor=m1[i][j]
+            if primo(valor):
+                no_es_comun=True
+                if valor in m2:
+                    no_es_comun=False
+                if no_es_comun and valor not in v:
+                         v.append(valor)
+    print(f"el vector resultante con los primos no comunes de las matrices es : {v}")
 
 #19.	Se tiene una matriz con datos numéricos repetidos, formar un vector con aquellos contadores 
 # de datos que se repiten y que sean números Fibonacci, sin repetidos
