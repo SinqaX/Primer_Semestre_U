@@ -117,14 +117,14 @@ def punto_17_4(m):
     for i in range(fm):
         for j in range(cm):
             dato=m[i][j]
-            if primo(dato)==True:
+            if primo(dato):
                 if c==0:
                     pm=m[i][j]
                     c=1
                 else:
                     if m[i][j]<pm:
                         pm=m[i][j]
-            if fibonacci(dato)==True:
+            if fibonacci(dato):
                 if z==0:
                     fm=m[i][j]
                     z=1
