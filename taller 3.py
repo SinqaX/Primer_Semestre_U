@@ -1,5 +1,5 @@
 # 17.	Se tiene una matriz cuadrada de orden N realizar lo siguiente
-m=[
+m17=[
     [2,5,6,8],
     [5,8,7,4],
     [9,4,1,3],
@@ -31,34 +31,34 @@ def fibonacci(dato):
     if t==dato:
         return True
 # -hallar el promedio diagonal prinpipal y secundadario
-def punto_17_1(m):
+def punto_17_1(m17):
     print("-17.1) hallar el promedio diagonal prinpipal y secundadario\n")
-    fm=len(m)
-    cm=len(m[0])
+    fm=len(m17)
+    cm=len(m17[0])
     sup=0
     for i in range(fm):
         for j in range(cm):
             if i==j :
-                sup+=m[i][j]
+                sup+=m17[i][j]
     prop=sup/fm
 
-    fm=len(m)
-    cm=len(m[0])
+    fm=len(m17)
+    cm=len(m17[0])
     sus=0
     s=fm-1
     for i in range(fm):
         for j in range(cm):
             if i+j== s:
-                sus+=m[i][j]
+                sus+=m17[i][j]
     prop=sus/fm
     print(f"el promedio de la daigonal principal es {prop}")
     print(f"el promedio de la daigonal secundaria es {prop}")
 
 
-def punto_17_2(m):
+def punto_17_2(m17):
     print("-17.2) Ordenar ascendentemente la diagonal principal\n")
-    fm=len(m)
-    cm=len(m[0])
+    fm=len(m17)
+    cm=len(m17[0])
     for i in range(fm):
         for j in range(cm):
             if i==j:
@@ -67,23 +67,23 @@ def punto_17_2(m):
                 for k in range(i+1,fm):
                     for l in range(j+1,cm):
                         if k==l:
-                            if m[k][l]<m[mei][mej]:
+                            if m17[k][l]<m17[mei][mej]:
                                 mei=k
                                 mej=l
                             break
-                m[i][j],m[mei][mej]=m[mei][mej],m[i][j]
+                m17[i][j],m17[mei][mej]=m17[mei][mej],m17[i][j]
 
     print("la diagonal principal ordenada ascendentemente queda asi : \n")  
-    for f in m:
+    for f in m17:
         print(f)
 
 
 #-	Hallar el promedio de los pares que están encima de la diagonal principal y de los 
 # impares de la diagonal secundaria
-def punto_17_3(m):
+def punto_17_3(m17):
     print("-17.3) Hallar el promedio de los pares que están encima de la diagonal principal y de los impares de la diagonal secundaria\n")
-    fm=len(m)
-    cm=len(m[0])
+    fm=len(m17)
+    cm=len(m17[0])
     su=0
     c=0
     sus=0
@@ -91,12 +91,12 @@ def punto_17_3(m):
     for i in range(fm):
         for j in range(cm):
             if j>i:
-                if m[i][j]%2==0:
-                    su+=m[i][j]
+                if m17[i][j]%2==0:
+                    su+=m17[i][j]
                     c+=1
             elif i+j==fm:
-                if m[i][j]!=2:
-                    sus+=m[i][j]
+                if m17[i][j]!=2:
+                    sus+=m17[i][j]
                     cs+=1
     if c>0:
         prom=su/c
@@ -107,72 +107,72 @@ def punto_17_3(m):
 
 # -	Llenar la diagonal principal con el primo menor de la matriz y la diagonal secundaria con 
 # el Fibonacci mayor.
-def punto_17_4(m):
+def punto_17_4(m17):
     print("-17.4) Llenar la diagonal principal con el primo menor de la matriz y la diagonal secundaria con el Fibonacci mayor.\n")
         
-    fm=len(m)
-    cm=len(m[0])
+    fm=len(m17)
+    cm=len(m17[0])
     c=0
     z=0
     for i in range(fm):
         for j in range(cm):
-            dato=m[i][j]
+            dato=m17[i][j]
             if primo(dato):
                 if c==0:
-                    pm=m[i][j]
+                    pm=m17[i][j]
                     c=1
                 else:
-                    if m[i][j]<pm:
-                        pm=m[i][j]
+                    if m17[i][j]<pm:
+                        pm=m17[i][j]
             if fibonacci(dato):
                 if z==0:
-                    fm=m[i][j]
+                    fm=m17[i][j]
                     z=1
                 else:
-                    if m[i][j]>fm:
-                        fm=m[i][j]
+                    if m17[i][j]>fm:
+                        fm=m17[i][j]
 
     for i in range(fm):
         for j in range(cm):
             if i==j:
-                m[i][j]=pm
+                m17[i][j]=pm
             if i+j==cm-1:
-                m[i][j]=fm
+                m17[i][j]=fm
     print("matriz resultante : \n")
-    for f in m:
+    for f in m17:
         print(f)
 
 # -	Llenar el contorno de la matriz con el par mayor de la matriz y la parte interna con el menor de los impares de la matriz.
-def punto_17_5(m):
+def punto_17_5(m17):
     print("-17.5) Llenar el contorno de la matriz con el par mayor de la matriz y la parte interna con el menor de los impares de la matriz.\n")
-    fm=len(m)
-    cm=len(m[0])
+    fm=len(m17)
+    cm=len(m17[0])
     c=0
     z=0
     for i in range(fm):
         for j in range(cm):
-            if m[i][j]%2==0:
+            if m17[i][j]%2==0:
                 if c==0:
-                    p=m[i][j]
+                    p=m17[i][j]
                     c=1
                 else:
-                    if m[i][j]>p:
-                        p=m[i][j]
-            if m[i][j]%2!=0:
+                    if m17[i][j]>p:
+                        p=m17[i][j]
+            if m17[i][j]%2!=0:
                 if z==0:
-                    im=m[i][j]
+                    im=m17[i][j]
                     z=1
                 else:
-                    if m[i][j]<im:
-                        im=m[i][j]
+                    if m17[i][j]<im:
+                        im=m17[i][j]
     for i in range(fm):
         for j in range(cm):
             if i==0 or i==fm-1 or j==0 or j==cm-1:
-                m[i][j]=p
+                m17[i][j]=p
             else:
-                m[i][j]=im
+                m17[i][j]=im
     print("matriz resultante : \n")
-    for f in m:
+    for f in m17:
         print(f)
     
 # 18.	Se tienen dos matrices con datos numéricos y se solicita;
@@ -222,7 +222,7 @@ def punto_18_2(m1,m2):
     v=[]
     for i in range(fm1):
         for j in range(cm1):
-            valor=m[i][j]
+            valor=m1[i][j]
             if primo(valor):
                 aux=valor
                 for k in range(fm2):
@@ -257,24 +257,24 @@ def punto_18_3(m1,m2):
 
 #19.	Se tiene una matriz con datos numéricos repetidos, formar un vector con aquellos contadores 
 # de datos que se repiten y que sean números Fibonacci, sin repetidos
-m=[
+m19=[
     [3, 7, 2, 3],
     [8, 2, 5, 8],
     [1, 6, 1, 4],
     [9, 4, 7, 2],
     [3, 8, 3, 6]
 ]
-def punto_19(m):
+def punto_19(m19):
     v=[]
-    fi=len(m)
+    fi=len(m19)
     for i in range(fi):
-        co=len(m[i])
+        co=len(m19[i])
         for j in range(co):
-            aux=m[i][j]
+            aux=m19[i][j]
             c=1
             for i in range(fi):
                 for l in range(j+1,co):
-                        if m[i][l]==aux:
+                        if m19[i][l]==aux:
                             c+=1
                             
             dato=c
