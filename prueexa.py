@@ -23,33 +23,14 @@ def es_impar(dato):
         return False
     else:
         return True
-def quick_sort_ascending(lista, inicio, fin):
-    if inicio > fin:
-        return
-    anterior = inicio
-    posterior = fin
-    pivo = lista[inicio]
-
-    while anterior < posterior:
-        while anterior < posterior and lista[posterior] > pivo:
-            posterior = posterior - 1
-
-        if anterior < posterior:
-            lista[anterior] = lista[posterior]
-            anterior = anterior + 1
-
-        while anterior < posterior and lista[anterior] <= pivo:
-            anterior = anterior + 1
-
-        if anterior < posterior:
-            lista[posterior] = lista[anterior]
-            posterior = posterior - 1
-
-        lista[anterior] = pivo
-
-    quick_sort_ascending(lista, inicio, anterior - 1)
-    quick_sort_ascending(lista, anterior + 1, fin)
-def descendente(lista):
+def orden_ascendente(lista):
+    for i in range(len(lista)):
+        me=i
+        for j in range(i+1, len(lista)):
+            if lista[j]<lista[me]:
+                me=j
+        lista[i],lista[me]=lista[me],lista[i]
+def orden_descendente(lista):
     for i in range(len(lista)):
         me=i
         for j in range(i+1, len(lista)):
@@ -73,9 +54,7 @@ for p in range(len(lista_2)):
                 lista_primos.append(lista_2[p]) 
 print(f"lista de primos : {lista_primos}")
 print(f"lista de impares :{lista_impares}")
-quick_sort_ascending(lista_primos, 0, len(lista_primos)-1)
-descendente(lista_impares)
+orden_ascendente(lista_primos)
+orden_descendente(lista_impares)
 print(f"la lista de primos ordenada ascendente queda : {lista_primos}")
 print(f"la lista de impares ordenada descendente queda : {lista_impares}")
-
-
